@@ -15,7 +15,7 @@ load_dotenv()
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 
-def get_token():
+def get_token() -> str:
 
     auth_string = f"{client_id}:{client_secret}"
     auth_bytes = auth_string.encode("utf-8")
@@ -82,4 +82,4 @@ def list_top_10_songs(artist_name: str):
 
 if __name__ == "__main__":
     # list_top_10_songs("the weeknd")
-    list_top_10_songs("konac")
+    list_top_10_songs("lauv")

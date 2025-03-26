@@ -68,12 +68,18 @@ def get_songs_by_artist(token: str, artist_id: str):
     return json_result
 
 
-token = get_token()
-result = search_artist(token, "Taylor Swift")
-artist_id = result["id"]
-songs = get_songs_by_artist(token, artist_id)
+def list_top_10_songs(artist_name: str):
+    token = get_token()
+    result = search_artist(token, artist_name)
+    artist_id = result["id"]
+    songs = get_songs_by_artist(token, artist_id)
 
-for idx, song in enumerate(songs):
-    print(f"{idx + 1}. {song['name']}")
+    for idx, song in enumerate(songs):
+        print(f"{idx + 1}. {song['name']}")
 
 
+
+
+if __name__ == "__main__":
+    # list_top_10_songs("the weeknd")
+    list_top_10_songs("konac")
